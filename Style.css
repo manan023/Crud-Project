@@ -19,13 +19,12 @@ body{
     padding: 15px 0;
 }
 
-.refresh-data{
+#refresh-data{
     width: 85%;
     height: 500px;
     border: 0px solid green;
     margin-top: 60px;
     margin-left: 78px;
-
 }
 
 
