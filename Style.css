@@ -36,16 +36,16 @@ body{
     
 }
 
-.refresh-data .table .row{
+#refresh-data .table .row{
     border: 1px solid red;
 }
 
-.refresh-data .table .row th {
+#refresh-data .table .row th {
     border: 0px solid red;
     
 }
 
-.refresh-data .table .row td{
+#refresh-data .table .row td{
     border: 0px solid red;
     width: 12.5%;
     height: 31px;
