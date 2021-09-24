@@ -12,53 +12,74 @@ function myFunction(){
     
 };
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', (event) => {    // use this bcz this not in function when i put this code in function its #work
     for( var i=0; i<user.length; i++){
-        console.log("Manan");
+        // console.log("Manan");
     
+
+                // FIRST METHOD 
+
+        // var tableBody = document.getElementById("table-body");
+        // var tableRow  = document.createElement("tr");
+        // tableRow.className= "row";
+    
+        // var firstNameCol = document.createElement("td");
+        // firstNameCol.innerText = user[i].firstName;
+    
+        // var middleNameCol = document.createElement("td");
+        // middleNameCol.innerText = user[i].middleName;
+    
+        // var lastNameCol = document.createElement("td");
+        // lastNameCol.innerText = user[i].lastName;
+
+        // var emailCol = document.createElement("td");
+        // emailCol.innerText = user[i].email;
+
+        // var roleCol = document.createElement("td");
+        // roleCol.innerText = user[i].role;
+
+        // var phoneCol = document.createElement("td");
+        // phoneCol.innerText = user[i].phone;
+
+        // var addressCol = document.createElement("td");
+        // addressCol.innerText = user[i].address;
+    
+        
+        // tableRow.appendChild(firstNameCol);
+        // tableRow.appendChild(middleNameCol);
+        // tableRow.appendChild(lastNameCol);
+        // tableRow.appendChild(emailCol);
+        // tableRow.appendChild(roleCol);
+        // tableRow.appendChild(phoneCol);
+        // tableRow.appendChild(addressCol);
+        // tableBody.append(tableRow);
+        
+    
+        // console.log(user[i].firstName);
+
+                // SECOND METHOD
+
         var tableBody = document.getElementById("table-body");
-        var tableRow  = document.createElement("tr");
-        tableRow.className= "row";
-    
-        var firstNameCol = document.createElement("td");
-        firstNameCol.innerText = user[i].firstName;
-    
-        var middleNameCol = document.createElement("td");
-        middleNameCol.innerText = user[i].middleName;
-    
-        var lastNameCol = document.createElement("td");
-        lastNameCol.innerText = user[i].lastName;
+        var tableRow = document.createElement("td");
+        tableRow.class = "row";
 
-        var emailCol = document.createElement("td");
-        emailCol.innerText = user[i].email;
+        var userInfo = user[1];
 
-        var roleCol = document.createElement("td");
-        roleCol.innerText = user[i].role;
+        for(var j = 0; j < 7; j++){
+            var column = document.createElement("td");
 
-        var phoneCol = document.createElement("td");
-        phoneCol.innerText = user[i].phone;
-
-        var addressCol = document.createElement("td");
-        addressCol.innerText = user[i].address;
-    
-        
-        tableRow.appendChild(firstNameCol);
-        tableRow.appendChild(middleNameCol);
-        tableRow.appendChild(lastNameCol);
-        tableRow.appendChild(emailCol);
-        tableRow.appendChild(roleCol);
-        tableRow.appendChild(phoneCol);
-        tableRow.appendChild(addressCol);
-        table.append(tableRow);
-        
-    
-        console.log(user[i].firstName);
+            var userInfoName = userInfo[j];
+            column.innerText = user[i][userInfoName];
+            
+            tableRow.appendChild(column)
+            
+        }
     
       };
 });
 
 
-// Learning For loop 
+// END Learning For loop 
 
 var user = [
     {
