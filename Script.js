@@ -5,7 +5,8 @@ function myFunction(){
     console.log("ok");
     if (a.style.display === "none"){
         a.style.display = "block";
-    } else {
+    } 
+    else {
         a.style.display = "none";
     }
 
@@ -14,7 +15,7 @@ function myFunction(){
 
 window.addEventListener('DOMContentLoaded', (event) => {    // use this bcz this not in function when i put this code in function its #work
     for( var i=0; i<user.length; i++){
-        // console.log("Manan");
+        console.log("Manan");
     
 
                 // FIRST METHOD 
@@ -60,23 +61,19 @@ window.addEventListener('DOMContentLoaded', (event) => {    // use this bcz this
                 // SECOND METHOD
 
         var tableBody = document.getElementById("table-body");
-        var tableRow = document.createElement("td");
-        tableRow.class = "row";
+        var tableRow = document.createElement("tr");
+        tableRow.className = "row";
 
-        var userInfo = user[1];
-
-        for(var j = 0; j < 7; j++){
+        for(var j = 0; j < userInfo.length; j++){
             var column = document.createElement("td");
+            column.innerText = user[i][userInfo[j]];
 
-            var userInfoName = userInfo[j];
-            column.innerText = user[i][userInfoName];
-            
-            tableRow.appendChild(column)
-            
+            tableRow.appendChild(column);
+            tableBody.appendChild(tableRow);
         }
-    
       };
 });
+
 
 
 // END Learning For loop 
@@ -104,6 +101,17 @@ var user = [
         firstName: "Harry",middleName: "kumar",lastName: "singla",email: "hs@gmail.com",role: "QA",phone: "807745546",address: "Chandigarah"
     }
 ];
+
+var userInfo = [
+    "firstName",
+    "middleName",
+    "lastName","email",
+    "role",
+    "phone",
+    "address",
+];
+
+
 
 
 
