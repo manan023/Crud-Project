@@ -14,7 +14,7 @@ function myFunction(){
 };
 
 window.addEventListener('DOMContentLoaded', (event) => {    // use this bcz this not in function when i put this code in function its #work
-    for( var i=0; i<user.length; i++){
+    for( let i=0; i<user.length; i++){
         console.log("Manan");
     
 
@@ -63,42 +63,53 @@ window.addEventListener('DOMContentLoaded', (event) => {    // use this bcz this
         var tableBody = document.getElementById("table-body");
         var tableRow = document.createElement("tr");
         tableRow.className = "row";
+        tableRow.setAttribute("id","body-row");
 
-        for(var j = 0; j < userInfo.length-1; j++){
+        for(var j = 0; j < userInfo.length; j++){
             var column = document.createElement("td");
             column.className = "col";
             column.innerText = user[i][userInfo[j]];
             tableRow.appendChild(column);
             tableBody.appendChild(tableRow);
-        }
+        };
 
-        // Edit btn
-        var colEdit = document.createElement("td");
-        var edtBtn = document.createElement("button"); 
-        edtBtn.className = "btn"
-        edtBtn.innerText = "Edit";
+            // Edit Button
+            var colEdit = document.createElement("td");
+            var edtbtn = document.createElement("button");
+            edtbtn.className = "btn"
+            edtbtn.innerText = "Edit"
+            edtbtn.addEventListener('click', ()=>{
+                console.log("row" + " " + i);
+                column.innerText= "ok"    
+            });
+
+
+
+            
+
+            // Delete button
+            var dltbtn = document.createElement("button");
+            dltbtn.className = "btn"
+            dltbtn.innerText = "Delete"
+
+            tableRow.appendChild(colEdit);
+            colEdit.appendChild(edtbtn);
+            colEdit.appendChild(dltbtn);
+            }
+
+        });
+
+
+
+
+                            // TRY
+
         // edtBtn.addEventListener('click',function(){
         //     let html = column.innerHTML;
         //     column.innerHTML = <textarea class="form-control" class="text-area" id = "text-area">${html}</textarea>
 
         // });
 
-        // delete btn 
-        var dltBtn = document.createElement("button");
-        dltBtn.className = "btn"
-        dltBtn.innerText = "Dlt";
-
-
-        tableRow.appendChild(colEdit);
-        colEdit.appendChild(edtBtn);
-        colEdit.appendChild(dltBtn);
-
-
-        
-
-        
-      };
-});
 
 
 
@@ -135,8 +146,7 @@ var userInfo = [
     "email",
     "role",
     "phone",
-    "address",
-    "link"
+    "address"
 ];
 
 

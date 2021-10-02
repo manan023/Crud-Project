@@ -42,8 +42,7 @@ body{
 }
 
 #refresh-data .table .row th {
-    border: 0px solid red;
-    
+    border: 0px solid red;   
 }
 
 #refresh-data .table .row td{
@@ -53,8 +52,7 @@ body{
     padding: 0px;
     background-color: #dfdede;
     font-size: 14px;
-    table-layout: fixed;
-    
+    table-layout: fixed;  
 }
 
 /* btn style */
