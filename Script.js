@@ -12,6 +12,18 @@ function myFunction(){
     }
 };
 
+// function deleteRows(){
+//     var rowCount = tableBody.row.length;
+//     if(rowCount > 7) {
+//         tableBody.deleteRows(i-1);
+//     }
+//     else{
+//         alert("Please insert atleast one row")
+//     }
+// };
+
+
+
 function emptyTable() {
     var tableBody = document.getElementById("table-body");
     tableBody.innerHTML = "";
@@ -35,9 +47,6 @@ function createTable(){
             if (editState[i]) {
               column.innerHTML = "<input class='input' value=" + user[i][userInfo[j]] + ">";
             } 
-            else if(dltState[i]){
-                column.innerHTML = "<input class= 'input'> "
-            }
             else {
               column.innerText = user[i][userInfo[j]];
             }
@@ -75,15 +84,19 @@ function createTable(){
             dltbtn.className = "btn"
             dltbtn.innerText = "Delete"
             dltbtn.addEventListener('click', ()=>{
-                console.log("dlt" + i);
-                emptyTable();
-                dltState = {};
-                dltState[i] = true;
-                createTable();
-            });
+                // console.log("dlt" + i);
+                var tableBody = document.getElementById("table-body");
+                console.log("row" + " " + i);
+                if(tableBody.rows.length > 1) {
+                    tableBody.deleteRow([i])
+                }
+                else {
+                    alert("Please insert atleast one row")
+                }
+            }); 
 
         
-        
+            
 
 
 
