@@ -39,7 +39,7 @@ function createTable(){
         var tableBody = document.getElementById("table-body");
         var tableRow = document.createElement("tr");
         tableRow.className = "row";
-        tableRow.setAttribute("id","body-row");
+        tableRow.setAttribute("id","body-row" +i);
         
         for (var j = 0; j < userInfo.length; j++) {
             var column = document.createElement("td");
@@ -85,19 +85,16 @@ function createTable(){
             dltbtn.innerText = "Delete"
             dltbtn.addEventListener('click', ()=>{
                 // console.log("dlt" + i);
-                var tableBody = document.getElementById("table-body");
+                var rowToDelete = document.getElementById("body-row"+i);
                 console.log("row" + " " + i);
-                if(tableBody.rows.length > 1) {
-                    tableBody.deleteRow([i])
+                var tableBody = document.getElementById("table-body");
+                if(tableBody.rows.length >1) {
+                    rowToDelete.remove();
                 }
                 else {
                     alert("Please insert atleast one row")
                 }
             }); 
-
-        
-            
-
 
 
         tableRow.appendChild(colEdit);
